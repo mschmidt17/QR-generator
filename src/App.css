@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-image: linear-gradient(180deg, #ab9bf3, #20125f);
+  font-family: 'Roboto', sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.search {
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .input {
+  display: none;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 50px;
+  transition: width 0.3s ease;
+}
+
+.btn {
+  background-color: #20125f;
+  border-radius: 60px;
+  border: 0;
+  cursor: pointer;
+  height: 50px;
+  width: 55px;
+  font-size: 30px;
+  color: white;
+  transition: 0.1s ease;
+  padding: 7px 0 0 3px;
+}
+
+.btn:hover{
+    background-color: #20125f9a;
+    border: 2px solid #20125f;
+}
+
+.search.active, .input {
+  width: 200px;
+  background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid white;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.search.active, .input:focus {
+  outline: none; 
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search.active .btn {
+  transform: translateX(198px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.enter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8% 0 20% 0;
+}
+
+.btn-enter{
+    border: 2px solid #20125f;
+    background-color: #20125f59;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.btn-enter:hover{
+    background-color: #20125f;
 }
