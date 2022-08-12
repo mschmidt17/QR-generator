@@ -12,6 +12,7 @@ Para probarlo:
 1. Descargá el repo
 2. En la consola: 'npm install'
 3. En la consola: 'npm start'
+4. Escanea el codigo desde tu celular
 
 <br></br>
 

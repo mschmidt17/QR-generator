@@ -1,13 +1,13 @@
 import React from 'react'; 
 import {useState} from 'react';
 import './App.css';
-import { BiSearch} from "react-icons/bi";
+import { TbHandClick} from "react-icons/tb";
 import QRCode from "react-qr-code";
 
 function App() {
     const [active, setActive] = useState(false)
     const [name, setName] = useState('')
-    const [QR, setQR] = useState('https://github.com/mschmidt17')
+    const [QR, setQR] = useState('')
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -41,16 +41,19 @@ function App() {
                 placeholder="Generate QR..."
                 onChange={(e) => handleInputChange(e)}
             />
-            <button className="btn" onClick={handleClick}> <BiSearch/> </button>
+            <button className="btn" onClick={handleClick}> <TbHandClick/> </button>
         </div>
 
         <div className='enter'>
             <button className="btn-enter" onClick={handleGenerate}> GENERATE QR </button>
         </div>
+        {
+            QR == "" ? null : 
+            <div className='codigo'>
+                <QRCode value={QR} size={256} bgColor="#282c34" fgColor="#fff" level="H"/>
+            </div>
+        }
 
-        <div className='codigo'>
-            <QRCode value={QR} size={256} bgColor="#282c34" fgColor="#fff" level="H"/>
-        </div>
         
     </div>
   );
